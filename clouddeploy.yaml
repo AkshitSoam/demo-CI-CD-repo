@@ -1,18 +1,26 @@
- 
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
 metadata:
   name: demo-pipeline
- 
+
 serialPipeline:
   stages:
   - targetId: dev
     profiles: ["dev"]
- 
+
   - targetId: prod
     profiles: ["prod"]
-    requireApproval: true
- 
+    strategy:
+      standard:
+        verify: false
+        predeploy:
+          actions: []
+        postdeploy:
+          actions: []
+        # 👇 Approval goes here
+        deployParameters: {}
+        requireApproval: true
+
 ---
 apiVersion: deploy.cloud.google.com/v1
 kind: Target
@@ -20,7 +28,7 @@ metadata:
   name: dev
 gke:
   cluster: projects/project-b9b64406-bb96-4830-8f1/locations/us-central1-a/clusters/demo-cluster
- 
+
 ---
 apiVersion: deploy.cloud.google.com/v1
 kind: Target
