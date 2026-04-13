@@ -1,11 +1,11 @@
 steps:
 # Build image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'asia-south1 -a-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-ci-cd-repo/app', '.']
+  args: ['build', '-t', 'asia-south1-a-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-ci-cd-repo/app', '.']
  
 # Push image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'asia-south1 -a-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-ci-cd-repo/app']
+  args: ['push', 'asia-south1-a-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-ci-cd-repo/app']
  
 # Trigger Cloud Deploy
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
