@@ -4,7 +4,7 @@ steps:
   args: [
     'build',
     '-t',
-    'asia-south1-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-repo/app',
+    'us-central1-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-repo/app',
     '.'
   ]
 
@@ -12,7 +12,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'push',
-    'asia-south1-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-repo/app'
+    'us-central1-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-repo/app'
   ]
 
 # Trigger Cloud Deploy
@@ -24,8 +24,8 @@ steps:
   - create
   - release-$BUILD_ID
   - --delivery-pipeline=demo-pipeline
-  - --region=asia-south1   # ✅ FIXED
-  - --images=app=us-central1-a-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-repo/app
+  - --region=us-central1
+  - --images=app=us-central1-docker.pkg.dev/project-b9b64406-bb96-4830-8f1/demo-repo/app
 
 options:
   logging: CLOUD_LOGGING_ONLY
