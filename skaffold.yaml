@@ -28,4 +28,4 @@ profiles:
 - name: prod
   deploy:
     kubectl:
-      defaultNamespace: prodk8s/
+      defaultNamespace: prod
