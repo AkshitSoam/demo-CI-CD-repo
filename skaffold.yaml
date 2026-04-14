@@ -13,8 +13,8 @@ build:
 
 manifests:
   rawYaml:
-  - deployment.yaml
-  - service.yaml
+  - k8s/deployment.yaml
+  - k8s/service.yaml
 
 deploy:
   kubectl: {}
@@ -28,4 +28,4 @@ profiles:
 - name: prod
   deploy:
     kubectl:
-      defaultNamespace: prod
+      defaultNamespace: prodk8s/
