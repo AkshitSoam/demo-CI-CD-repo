@@ -21,15 +21,11 @@ deploy:
 
 profiles:
 - name: dev
-  patches:
-  - op: add
-    path: /spec/template/spec/nodeSelector
-    value:
-      env: dev
+  deploy:
+    kubectl:
+      defaultNamespace: dev
 
 - name: prod
-  patches:
-  - op: add
-    path: /spec/template/spec/nodeSelector
-    value:
-      env: prod
+  deploy:
+    kubectl:
+      defaultNamespace: prod
