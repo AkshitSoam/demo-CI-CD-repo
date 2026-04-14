@@ -19,7 +19,7 @@ serialPipeline:
           actions: []
         # 👇 Approval goes here
         deployParameters: {}
-        requireApproval: true
+requireApproval: true
 
 ---
 apiVersion: deploy.cloud.google.com/v1
